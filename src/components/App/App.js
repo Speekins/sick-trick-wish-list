@@ -17,11 +17,16 @@ class App extends Component {
     .then(data => this.setState({ tricks: data }))
   }
 
+  submitTrick = (newTrick) => {
+    const currentTricks = this.state.tricks
+    this.setState({ tricks: [...currentTricks, newTrick]})
+  }
+
   render() {
     return (
       <div className="App">
         <h1>Sick Trick Wish List</h1>
-        <Form />
+        <Form submitTrick={this.submitTrick}/>
         <Tricks tricks={ this.state.tricks }/>
       </div>
     );

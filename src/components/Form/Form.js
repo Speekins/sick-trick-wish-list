@@ -15,11 +15,10 @@ class Form extends Component {
   handleChange = (e) => {
     let name = e.target.name
     this.setState({ [name]: e.target.value })
-    console.log(this.state)
   }
 
   handleClick = () => {
-    
+    this.props.submitTrick(this.state)
   }
 
   render() {
@@ -38,7 +37,7 @@ class Form extends Component {
           <option value='pool'>Pool</option>
         </select>
         <input type='text' name='tutorial' placeholder='Tutorial Link' onChange={(event) => this.handleChange(event)}></input>
-        <button>Submit</button>
+        <button onClick={() => this.handleClick()}>Submit</button>
       </div>
     )
   }
