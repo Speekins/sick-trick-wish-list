@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from '../Card/Card'
+import './Tricks.css'
 
 const Tricks = ({ tricks }) => {
   const allTricks = tricks.map(trick =>
@@ -12,7 +13,9 @@ const Tricks = ({ tricks }) => {
     />)
 
   return (
-    <p>Tricks!</p>
+    <div className='tricks-container'>
+      {allTricks}
+    </div>
   )
 }
 
