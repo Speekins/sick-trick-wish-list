@@ -30,7 +30,6 @@ class App extends Component {
   }
 
   removeTrick = (id) => {
-    console.log(typeof id)
     const tricksToKeep = this.state.tricks.filter(trick => trick.id !== id)
     this.setState({ tricks: [...tricksToKeep]})
     fetch(`http://localhost:3001/api/v1/tricks/${id}`, { method: 'DELETE' })
