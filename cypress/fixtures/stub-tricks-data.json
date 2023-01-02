@@ -1,0 +1,30 @@
+[
+  {
+    "stance": "switch",
+    "name": "Japan Air",
+    "obstacle": "pool",
+    "tutorial": "https://www.youtube.com/watch?v=tTsWvy2CcvQ",
+    "id": 1
+  },
+  {
+    "stance": "Laserflip",
+    "name": "Cool Trick",
+    "obstacle": "stairs",
+    "tutorial": "https://www.youtube.com/watch?v=tTsWvy2CcvQ",
+    "id": 2
+  },
+  {
+    "stance": "switch",
+    "name": "FS Noseblunt",
+    "obstacle": "rail",
+    "tutorial": "https://www.youtube.com/watch?v=tTsWvy2CcvQ",
+    "id": 3
+  },
+  {
+    "stance": "regular",
+    "name": "Indy Backflip",
+    "obstacle": "flatgroun",
+    "tutorial": "https://www.youtube.com/watch?v=tTsWvy2CcvQ",
+    "id": 4
+  }
+]
