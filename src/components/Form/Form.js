@@ -19,6 +19,13 @@ class Form extends Component {
 
   handleClick = () => {
     this.props.submitTrick(this.state)
+    this.setState({
+      stance: '',
+      name: '',
+      obstacle: '',
+      tutorial: '',
+      id: Date.now()
+    })
   }
 
   render() {
@@ -31,7 +38,7 @@ class Form extends Component {
         </select>
         <input type='text' name='name' placeholder='Name Of Trick' onChange={(event) => this.handleChange(event)}></input>
         <select name='obstacle' className='obstacle' onChange={(event) => this.handleChange(event)}>
-          <option value =''>Select an Obstacle</option>
+          <option value=''>Select an Obstacle</option>
           <option value='flatground'>Flatground</option>
           <option value='ledge'>Ledge</option>
           <option value='rail'>Rail</option>
