@@ -30,14 +30,14 @@ class Form extends Component {
   render() {
     return (
       <div className='form'>
-        <select name='stance' className='stance' onChange={(event) => this.handleChange(event)}>
+        <select name='stance' value={this.state.stance} className='stance' onChange={(event) => this.handleChange(event)}>
           <option value=''>Select a stance</option>
           <option value='regular'>Regular</option>
           <option value='switch'>Switch</option>
         </select>
-        <input type='text' className='name' name='name' placeholder='Name Of Trick'
+        <input type='text' value={this.state.name} className='name' name='name' placeholder='Name Of Trick'
           onChange={(event) => this.handleChange(event)}></input>
-        <select name='obstacle' className='obstacle' onChange={(event) => this.handleChange(event)}>
+        <select name='obstacle' value={this.state.obstacle} className='obstacle' onChange={(event) => this.handleChange(event)}>
           <option value=''>Select an Obstacle</option>
           <option value='flatground'>Flatground</option>
           <option value='ledge'>Ledge</option>
@@ -45,7 +45,7 @@ class Form extends Component {
           <option value='stairs'>Stairs</option>
           <option value='pool'>Pool</option>
         </select>
-        <input type='text' name='tutorial' className='tutorial' placeholder='Tutorial Link'
+        <input type='text' value={this.state.tutorial} name='tutorial' className='tutorial' placeholder='Tutorial Link'
           onChange={(event) => this.handleChange(event)}></input>
         <button onClick={() => this.handleClick()} className='submit'>Submit</button>
       </div>
