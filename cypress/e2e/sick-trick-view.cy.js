@@ -17,7 +17,25 @@ describe('Main tricks page', () => {
     cy.get('.card').last().contains('Indy Backflip')
   })
 
-  it('should be able to select a ')
+  it('should be able to select a stance', () => {
+    cy.get('select[name="stance"]').select('switch')
+    cy.get('select[name="stance"]').should('have.value', 'switch')
+  })
+
+  it('should be able to enter a trick name', () => {
+    cy.get('input[name="name"]').type('Wowza')
+    cy.get('input[name="name"]').should('have.value', 'Wowza')
+  })
+
+  it('should be able to select an obstacle', () => {
+    cy.get('select[name="obstacle"]').select('Rail')
+    cy.get('select[name="obstacle"]').should('have.value', 'rail')
+  })
+
+  it('should be able to enter a tutorial link', () => {
+    cy.get('input[name="tutorial"]').type('https://www.youtube.com/watch?v=qsxcVsFDDoA')
+    cy.get('input[name="tutorial"]').should('have.value', 'https://www.youtube.com/watch?v=qsxcVsFDDoA')
+  })
 
   it('should be able to add new tricks', () => {
     cy.get('select[name="stance"]').select('regular')
