@@ -12,22 +12,32 @@ class Form extends Component {
     }
   }
 
+  handleChange = (e) => {
+    let name = e.target.name
+    this.setState({ [name]: e.target.value })
+    console.log(this.state)
+  }
+
+  handleClick = () => {
+    
+  }
+
   render() {
     return (
       <div>
-        <select name='stance' className='stance'>
+        <select name='stance' className='stance' onChange={(event) => this.handleChange(event)}>
           <option value='regular'>Regular</option>
           <option value='switch'>Switch</option>
         </select>
-        <input type='text' placeholder='Name Of Trick'></input>
-        <select name='obstacle' className='obstacle'>
+        <input type='text' name='name' placeholder='Name Of Trick' onChange={(event) => this.handleChange(event)}></input>
+        <select name='obstacle' className='obstacle' onChange={(event) => this.handleChange(event)}>
           <option value='flatground'>Flatground</option>
           <option value='ledge'>Ledge</option>
           <option value='rail'>Rail</option>
           <option value='stairs'>Stairs</option>
           <option value='pool'>Pool</option>
         </select>
-        <input type='text' placeholder='Tutorial Link'></input>
+        <input type='text' name='tutorial' placeholder='Tutorial Link' onChange={(event) => this.handleChange(event)}></input>
         <button>Submit</button>
       </div>
     )
