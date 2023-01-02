@@ -8,7 +8,6 @@ class Form extends Component {
       name: '',
       obstacle: '',
       tutorial: '',
-      id: Date.now()
     }
   }
 
@@ -24,7 +23,6 @@ class Form extends Component {
       name: '',
       obstacle: '',
       tutorial: '',
-      id: Date.now()
     })
   }
 

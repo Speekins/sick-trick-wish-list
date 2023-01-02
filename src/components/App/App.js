@@ -19,12 +19,21 @@ class App extends Component {
 
   submitTrick = (newTrick) => {
     const currentTricks = this.state.tricks
-    this.setState({ tricks: [...currentTricks, newTrick] })
+    //this.setState({ tricks: [...currentTricks, newTrick] })
     fetch('http://localhost:3001/api/v1/tricks', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newTrick)
     })
+    .then(response => response.json())
+    .then(data => this.setState({ tricks: [...currentTricks, data] }))
+  }
+
+  removeTrick = (id) => {
+    console.log(typeof id)
+    const tricksToKeep = this.state.tricks.filter(trick => trick.id !== id)
+    this.setState({ tricks: [...tricksToKeep]})
+    fetch(`http://localhost:3001/api/v1/tricks/${id}`)
   }
 
   render() {
@@ -32,7 +41,7 @@ class App extends Component {
       <div className="App">
         <h1>Sick Trick Wish List</h1>
         <Form submitTrick={this.submitTrick} />
-        <Tricks tricks={this.state.tricks} />
+        <Tricks tricks={this.state.tricks} removeTrick={this.removeTrick}/>
       </div>
     )
   }
