@@ -25,11 +25,13 @@ class Form extends Component {
     return (
       <div>
         <select name='stance' className='stance' onChange={(event) => this.handleChange(event)}>
+          <option value=''>Select a stance</option>
           <option value='regular'>Regular</option>
           <option value='switch'>Switch</option>
         </select>
         <input type='text' name='name' placeholder='Name Of Trick' onChange={(event) => this.handleChange(event)}></input>
         <select name='obstacle' className='obstacle' onChange={(event) => this.handleChange(event)}>
+          <option value =''>Select an Obstacle</option>
           <option value='flatground'>Flatground</option>
           <option value='ledge'>Ledge</option>
           <option value='rail'>Rail</option>
@@ -37,7 +39,7 @@ class Form extends Component {
           <option value='pool'>Pool</option>
         </select>
         <input type='text' name='tutorial' placeholder='Tutorial Link' onChange={(event) => this.handleChange(event)}></input>
-        <button onClick={() => this.handleClick()}>Submit</button>
+        <button onClick={() => this.handleClick()} className='submit'>Submit</button>
       </div>
     )
   }
